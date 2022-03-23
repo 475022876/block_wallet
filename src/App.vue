@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <nut-tabbar @tab-switch="tabSwitch">
+  <nut-tabbar-item tab-title="首页" icon="home"></nut-tabbar-item>
+  <nut-tabbar-item tab-title="分类" icon="category"></nut-tabbar-item>
+  <nut-tabbar-item tab-title="发现" icon="find"></nut-tabbar-item>
+  <nut-tabbar-item tab-title="购物车" icon="cart"></nut-tabbar-item>
+  <nut-tabbar-item tab-title="我的" icon="my"></nut-tabbar-item>
+</nut-tabbar>
+</div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+import { createApp } from 'vue';
+// vue
+import { Tabbar,TabbarItem,Icon } from '@nutui/nutui';
+const app = createApp();
+app.use(Tabbar,TabbarItem,Icon);
+export default{
+  name: 'App'
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
